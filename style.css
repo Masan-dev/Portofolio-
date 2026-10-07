@@ -1,0 +1,1272 @@
+/* ==================================================
+   RESET
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   BASIC
+   ================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: #ffffff;
+
+    color: #111111;
+
+    line-height: 1.6;
+}
+
+
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+.header {
+
+    width: 100%;
+
+    min-height: 80px;
+
+    padding:
+        0 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid #222222;
+
+    /*
+        Sticky membuat header
+        tetap berada di atas ketika
+        halaman di-scroll.
+    */
+
+    position: sticky;
+
+    top: 0;
+
+    background-color: #ffffff;
+
+    z-index: 100;
+}
+
+
+
+/* Logo */
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+
+
+/* Navigation */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+.navbar a {
+
+    text-decoration: none;
+
+    color: #111111;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition:
+        0.3s;
+}
+
+
+
+/* Garis hover */
+
+.navbar a::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    left: 0;
+
+    bottom: -7px;
+
+    background-color:
+        #111111;
+
+    transition:
+        width 0.3s;
+}
+
+
+.navbar a:hover::after {
+
+    width: 100%;
+}
+
+
+
+/* ==================================================
+   HERO
+   ================================================== */
+
+.hero {
+
+    min-height:
+        550px;
+
+    padding:
+        80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 60px;
+
+    border-bottom:
+        1px solid #222222;
+}
+
+
+
+/* Hero text */
+
+.hero-content {
+
+    flex: 1;
+}
+
+
+.hero-content h1 {
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            65px
+        );
+
+    line-height:
+        1.1;
+
+    margin-bottom:
+        20px;
+}
+
+
+.hero-content h1 span {
+
+    display: block;
+}
+
+
+.hero-content p {
+
+    font-size:
+        18px;
+
+    max-width:
+        500px;
+
+    margin-bottom:
+        30px;
+
+    color:
+        #444444;
+}
+
+
+
+/* Button */
+
+.button {
+
+    display:
+        inline-block;
+
+    padding:
+        12px 24px;
+
+    border:
+        2px solid #111111;
+
+    text-decoration:
+        none;
+
+    color:
+        #111111;
+
+    font-weight:
+        700;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+
+.button:hover {
+
+    background-color:
+        #111111;
+
+    color:
+        #ffffff;
+}
+
+
+
+/* ==================================================
+   HERO IMAGE
+   ================================================== */
+
+.hero-image {
+
+    flex: 1;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+}
+
+
+
+/*
+    Ini adalah gambar sebenarnya.
+
+    HTML:
+    <img src="images/profile.jpg">
+
+    CSS ini hanya mengatur
+    bagaimana gambar tersebut
+    ditampilkan.
+*/
+
+.hero-image img {
+
+    width:
+        min(
+            100%,
+            450px
+        );
+
+    aspect-ratio:
+        4 / 3;
+
+    object-fit:
+        cover;
+
+    border:
+        2px solid #333333;
+
+    display:
+        block;
+}
+
+
+
+/* ==================================================
+   GENERAL SECTION
+   ================================================== */
+
+.section {
+
+    padding:
+        75px 8%;
+
+    border-bottom:
+        1px solid #222222;
+}
+
+
+.section h2 {
+
+    font-size:
+        34px;
+
+    margin-bottom:
+        15px;
+}
+
+
+
+/* Garis */
+
+.section-line {
+
+    width:
+        300px;
+
+    height:
+        2px;
+
+    background-color:
+        #222222;
+
+    margin-bottom:
+        25px;
+}
+
+
+
+/* ==================================================
+   ABOUT
+   ================================================== */
+
+.about {
+
+    min-height:
+        250px;
+}
+
+
+.about p {
+
+    max-width:
+        700px;
+
+    color:
+        #444444;
+
+    font-size:
+        17px;
+}
+
+
+
+/* ==================================================
+   PORTFOLIO
+   ================================================== */
+
+.portfolio {
+
+    background-color:
+        #fafafa;
+}
+
+
+
+.portfolio-grid {
+
+    margin-top:
+        35px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        25px;
+}
+
+
+
+/* ==================================================
+   PORTFOLIO CARD
+   ================================================== */
+
+.portfolio-card {
+
+    background-color:
+        #ffffff;
+
+    border:
+        1px solid #222222;
+
+    cursor:
+        pointer;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+
+/*
+    Efek ketika mouse
+    berada di atas card.
+*/
+
+.portfolio-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        8px 8px 0 #111111;
+}
+
+
+
+/*
+    Efek ketika card ditekan.
+
+    JavaScript akan menambahkan
+    class "active".
+*/
+
+.portfolio-card.active {
+
+    transform:
+        scale(0.96);
+}
+
+
+
+/* ==================================================
+   PORTFOLIO IMAGE
+   ================================================== */
+
+.card-image {
+
+    aspect-ratio:
+        4 / 3;
+
+    border-bottom:
+        1px solid #222222;
+
+    overflow:
+        hidden;
+}
+
+
+
+/*
+    Gambar portfolio.
+
+    HTML-nya menggunakan:
+    <img>
+*/
+
+.card-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+
+/*
+    Zoom kecil ketika
+    mouse berada di atas card.
+*/
+
+.portfolio-card:hover
+.card-image img {
+
+    transform:
+        scale(1.05);
+}
+
+
+
+/* ==================================================
+   CARD CONTENT
+   ================================================== */
+
+.card-content {
+
+    padding:
+        20px;
+}
+
+
+.card-content h3 {
+
+    font-size:
+        18px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.card-content p {
+
+    color:
+        #666666;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        15px;
+}
+
+
+
+/* View button */
+
+.detail-button {
+
+    border:
+        1px solid #111111;
+
+    background-color:
+        #ffffff;
+
+    padding:
+        8px 15px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        700;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+
+.detail-button:hover {
+
+    background-color:
+        #111111;
+
+    color:
+        #ffffff;
+}
+
+
+
+/* ==================================================
+   SKILL
+   ================================================== */
+
+.skills {
+
+    min-height:
+        400px;
+}
+
+
+.skill-container {
+
+    max-width:
+        800px;
+
+    margin-top:
+        35px;
+}
+
+
+
+/*
+    Skill sengaja TIDAK
+    menggunakan card.
+
+    Hanya menggunakan
+    garis pemisah.
+*/
+
+.skill-item {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        20px 0;
+
+    border-bottom:
+        1px solid #aaaaaa;
+
+    font-weight:
+        700;
+}
+
+
+.skill-item span:last-child {
+
+    color:
+        #666666;
+
+    font-weight:
+        400;
+}
+
+
+
+/* ==================================================
+   CONTACT
+   ================================================== */
+
+.contact {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        70px;
+}
+
+
+
+/* Informasi */
+
+.contact-information p {
+
+    max-width:
+        450px;
+
+    color:
+        #555555;
+}
+
+
+
+/* Form */
+
+.contact-form {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        18px;
+}
+
+
+
+/* Form group */
+
+.form-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+}
+
+
+.form-group label {
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+}
+
+
+
+/* Input dan textarea */
+
+.form-group input,
+.form-group textarea {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    border:
+        1px solid #333333;
+
+    background-color:
+        #ffffff;
+
+    color:
+        #111111;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    outline:
+        none;
+}
+
+
+
+/* Ketika input dipilih */
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border:
+        2px solid #111111;
+}
+
+
+.form-group textarea {
+
+    min-height:
+        130px;
+
+    resize:
+        vertical;
+}
+
+
+
+/* Submit */
+
+.submit-button {
+
+    padding:
+        14px;
+
+    border:
+        2px solid #111111;
+
+    background-color:
+        #111111;
+
+    color:
+        #ffffff;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+
+.submit-button:hover {
+
+    background-color:
+        #ffffff;
+
+    color:
+        #111111;
+}
+
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.footer {
+
+    background-color:
+        #111111;
+
+    color:
+        #ffffff;
+
+    padding:
+        50px 8% 25px;
+}
+
+
+.footer-content {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        40px;
+}
+
+
+.footer-content h3 {
+
+    font-size:
+        24px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.footer-content p {
+
+    color:
+        #bbbbbb;
+}
+
+
+
+/* Footer bottom */
+
+.footer-bottom {
+
+    border-top:
+        1px solid #555555;
+
+    padding-top:
+        20px;
+
+    text-align:
+        center;
+
+    color:
+        #999999;
+
+    font-size:
+        13px;
+}
+
+
+
+/* ==================================================
+   MODAL
+   ================================================== */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background-color:
+        rgba(
+            0,
+            0,
+            0,
+            0.75
+        );
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index:
+        200;
+}
+
+
+
+/*
+    JavaScript akan memberikan
+    class "show" ketika modal
+    harus ditampilkan.
+*/
+
+.modal.show {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+}
+
+
+
+/* Isi modal */
+
+.modal-content {
+
+    width:
+        min(
+            600px,
+            100%
+        );
+
+    background-color:
+        #ffffff;
+
+    border:
+        2px solid #111111;
+
+    padding:
+        40px;
+
+    position:
+        relative;
+
+    transform:
+        translateY(30px)
+        scale(0.95);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+
+/*
+    Animasi ketika modal muncul.
+*/
+
+.modal.show
+.modal-content {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+
+/* Tombol close */
+
+.close-modal {
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    right:
+        20px;
+
+    border:
+        none;
+
+    background:
+        none;
+
+    font-size:
+        32px;
+
+    cursor:
+        pointer;
+
+    line-height:
+        1;
+}
+
+
+
+/* Judul modal */
+
+.modal-content h2 {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        15px;
+}
+
+
+
+/* Garis modal */
+
+.modal-line {
+
+    width:
+        100px;
+
+    height:
+        2px;
+
+    background-color:
+        #111111;
+
+    margin-bottom:
+        25px;
+}
+
+
+.modal-content p {
+
+    color:
+        #444444;
+
+    margin-bottom:
+        20px;
+}
+
+
+.modal-tech {
+
+    border-top:
+        1px solid #cccccc;
+
+    padding-top:
+        15px;
+}
+
+
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+
+    .header {
+
+        padding:
+            0 5%;
+    }
+
+
+    .hero {
+
+        padding:
+            60px 5%;
+    }
+
+
+    .section {
+
+        padding:
+            60px 5%;
+    }
+
+
+    .portfolio-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .contact {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+
+/* ================= HP ================= */
+
+@media (max-width: 600px) {
+
+
+    /* Header */
+
+    .header {
+
+        min-height:
+            auto;
+
+        padding:
+            20px 5%;
+
+        flex-direction:
+            column;
+
+        gap:
+            20px;
+    }
+
+
+    .navbar {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            18px;
+    }
+
+
+    .navbar a {
+
+        font-size:
+            12px;
+    }
+
+
+
+    /* Hero */
+
+    .hero {
+
+        padding:
+            50px 5%;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            40px;
+    }
+
+
+    .hero-image {
+
+        width:
+            100%;
+    }
+
+
+    .hero-image img {
+
+        width:
+            100%;
+    }
+
+
+
+    /* Section */
+
+    .section {
+
+        padding:
+            50px 5%;
+    }
+
+
+    .section h2 {
+
+        font-size:
+            30px;
+    }
+
+
+    .section-line {
+
+        width:
+            180px;
+    }
+
+
+
+    /* Portfolio */
+
+    .portfolio-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+
+    /* Skill */
+
+    .skill-item {
+
+        font-size:
+            14px;
+    }
+
+
+
+    /* Modal */
+
+    .modal-content {
+
+        padding:
+            30px 25px;
+    }
+
+}
